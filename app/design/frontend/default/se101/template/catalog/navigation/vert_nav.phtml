@@ -1,0 +1,196 @@
+<style type="text/css">
+/**********************************************Vertical Nav ****************************************/
+#nav_vert {
+	padding: 0 8px;
+	font-size: 1em;
+	z-index: 999;
+	width: 180px;
+	background-color: #F6F6F6;
+}
+
+/************** ALL LEVELS *************/
+	/* Style consistent throughout all nav levels */
+#nav_vert li {
+	width: 180px;
+	list-style: none;
+	position: relative;
+	text-align: left;
+	background-color: #F6F6F6;
+	border-bottom-width: thin;
+	border-bottom-style: solid;
+	border-bottom-color: #CCCCCC;
+}
+
+#nav_vert li.over {
+	z-index: 999;
+}
+
+#nav_vert li.active {
+	z-index: 999;
+}
+	
+	/* to prevent the li separator from showing through on mouseover on li */
+#nav_vert a {
+	line-height: 1.3em;
+}
+
+#nav_vert a,#nav_vert a:hover {
+	display: block;
+	text-decoration: none;
+}
+
+#nav_vert span {
+	display: block;
+	cursor: pointer;
+	color: #000;
+}
+
+/************ 1ST LEVEL ***************/
+#nav_vert li {
+	float: left;
+	background: url(../images/nav_bg.gif) repeat-x 50%;
+	height: 30px;
+	margin-right: 1px;
+}
+
+#nav_vert li.active a {
+	color: #4c6a16;
+}
+
+#nav_vert a {
+	float: left;
+	padding: 5px 12px 6px 8px;
+	color: #4c6a16;
+	font-weight: bold;
+	font-family: Trebuchet MS;
+	font-size: 13px;
+}
+
+#nav_vert li.over a,#nav_vert a:hover {
+	color: #CCCCCC;
+}
+
+/************ 1ST LEVEL RESET ************/
+#nav_vert ul li,#nav_vert ul li.active {
+	float: none;
+	height: auto;
+	background: none;
+	margin: 0;
+}
+
+#nav_vert ul a,#nav_vert ul a:hover {
+	float: none;
+	padding: 0;
+	background: none;
+}
+
+#nav_vert ul li a {
+	font-weight: normal !important;
+}
+
+/************ 2ND LEVEL ***********/
+#nav_vert ul {
+	position: absolute;
+	width: 180px;
+	margin-left: 180px;
+	top: 0px;
+	left: -10000px;
+	border: 1px solid #666666;
+}
+
+/* Show menu */
+#nav_vert li.over ul {
+
+left: 0;
+}
+
+#nav_vert li.over ul ul {
+
+left: -10000px;
+}
+
+#nav_vert li.over ul li.over ul {
+	left: 0px;
+}
+
+#nav_vert ul li a {
+	background: #FFFFFF /*#ecf3f6*/;
+}
+
+#nav_vert ul li a:hover {
+	background: #F2F1D2; /*#d5e4eb;*/
+}
+
+#nav_vert ul li a span {
+	background: url(../images/nav_divider.gif) repeat-x 0 100%;
+}
+
+#nav_vert ul li a,#nav_vert ul li a:hover {
+	color: #2f2f2f !important;
+}
+
+#nav_vert ul span,#nav_vert ul li.last li span {
+	padding: 6px 15px 6px 15px;
+}
+
+#nav_vert ul li.last span {
+	background: none;
+}
+
+/************ 3RD+ LEVEL ************/
+#nav_vert ul ul {
+	top: 5px;
+}
+
+#nav_vert ul ul ul {
+	left: -10000px;
+}
+
+#nav_vert li.over ul li.over ul ul {
+	left: -10000px;
+}
+
+#nav_vert li.over ul li.over ul li.over ul {
+	left: 100px;
+}
+
+/* Fix for the IE bug */
+#nav_vert iframe {
+	position: absolute;
+	left: -1px;
+	top: 0;
+	z-index: -1;
+	filter: progid : DXImageTransform.Microsoft.Alpha ( style = 0, opacity =
+		0 );
+}
+</style>
+
+<div class="vertical-nav-container box base-mini">
+<div class="vertical-nav"><!--<div class="head">--> <!--<h4>-->
+<div class="block block-cart">
+<div class="block-title"><strong><span><?php
+echo $this->__ ( 'Categories' )?></span></strong>
+</div>
+<!--End block block-cart-->
+<div class="block-content"><!--</h4>--> <!--</div>--><!--End Of head-->
+<h4 class="no-display">
+<?php
+echo $this->__ ( 'Category Navigation:' )?></h4>
+<ul id="nav_vert">
+<?php
+foreach ( $this->getStoreCategories () as $_category ) :
+	?>
+<?php
+
+	echo $this->drawItem ( $_category )?>
+<?php
+endforeach
+?> </ul>
+</div>
+</div>
+<!--End Of vertical-nav-->
+<?php
+echo $this->getChildHtml ( 'topLeftLinks' )?>
+</div>
+</div>
+<!--End Of vertical-nav-container box base-mini-->

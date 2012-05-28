@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<package>
+    <name>Phoenix_Ipayment</name>
+    <version>1.3.0</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/osl-3.0.php">Open Software License (OSL)</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Fully integrated payment module</summary>
+    <description>&lt;a href="https://ipayment.de/" target="_blank"&gt;1&amp;1 ipayment&lt;/a&gt; is fully integrated in the Magento Onepage checkout and offers credit card payment for German and Austrian merchants.
+
+&lt;b&gt;Highlights:&lt;/b&gt;
+- &lt;b&gt;Seamlessly integrated in the checkout&lt;/b&gt;
+- PCI compliant credit card payment
+- Support for 3D-Secure payments
+- Payment capturing and canceling in the Magento backend
+- Includes demo account ready for testing
+
+
+This extension has been developed by &lt;a href="http://www.phoenix-medien.de" target="_blank"&gt;Phoenix Medien&lt;/a&gt;, Magento Professional Partner in Stuttgart and Vienna.
+
+&lt;b&gt;Note:&lt;/b&gt; This module requires the PHP SOAP and OpenSSL extensions to be installed.</description>
+    <notes>- Moved payment form in an iFrame (check your templates!)
+- Added min/max order values in configuration
+- Made invoice text configurable
+- Added test mode option to deactivate security checks for development
+- Added debug option to deactivate logging
+- Move log information in separte file</notes>
+    <authors><author><name>Phoenix Medien</name><user>auto-converted</user><email>info@phoenix-medien.de</email></author></authors>
+    <date>2011-02-17</date>
+    <time>11:24:16</time>
+    <contents><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="template"><dir name="ipayment"><dir name="form"><file name="cc.phtml" hash="e80f2723fd1a77dee37be8ccab0ef25b"/><file name="elv.phtml" hash="45af5a122b7b6e1a3b8dd9f34b588744"/></dir><dir name="info"><dir name="pdf"><file name="cc.phtml" hash="f222756127a6289c9967b0377a86547d"/><file name="elv.phtml" hash="547c58269f3e858ce06482dfa1c3c5d7"/></dir><file name="cc.phtml" hash="85b124d79cd2911b7eed79183f83c9e4"/><file name="elv.phtml" hash="76d268c0395bc2c8a3aaf9a203629160"/></dir></dir></dir></dir></dir></dir><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><file name="ipayment.xml" hash="266a41af55082a300144fe914ef67cc7"/></dir><dir name="template"><dir name="ipayment"><dir name="form"><file name="cc.phtml" hash="bcf1c4c742c0b9a4e015d7c6ad550927"/><file name="elv.phtml" hash="703ad2e2ca0eb8783d0da228d01a7681"/></dir><dir name="info"><file name="cc.phtml" hash="c54c8e9b69250afbc76cabe2e375b1c3"/><file name="elv.phtml" hash="4e1bb744c200a8c821f8a65a7165edbf"/></dir><file name="blank.phtml" hash="7c5c7c5e01d7d48b8f5d9da5e00c017e"/><file name="ccform.phtml" hash="a8ffd3ee9eb33c83a4f4e8fa9630fb1f"/><file name="jsinclude.phtml" hash="91780c7a3ef284d24d548729947ed2b6"/><file name="redirect.phtml" hash="e0821851c2999ccc267eb0eea17e7037"/></dir></dir></dir></dir><dir name="default"><dir name="default"><dir name="layout"><file name="ipayment.xml" hash="0677b446a360218f46b3cf6ce8623241"/></dir><dir name="template"><dir name="ipayment"><dir name="form"><file name="cc.phtml" hash="11bf62687410ed07ae8d312919780978"/><file name="elv.phtml" hash="679b6be9fd4b707d3e3de7d5f79385c4"/></dir><dir name="info"><file name="cc.phtml" hash="7206b0f1f0a9d745e955810cb8527d6e"/><file name="elv.phtml" hash="53221c9dcb0e7cc8b7af6adfd8b994b8"/></dir><file name="blank.phtml" hash="7c5c7c5e01d7d48b8f5d9da5e00c017e"/><file name="ccform.phtml" hash="68ee0e2cc9c1389f391883d32deddea5"/><file name="jsinclude.phtml" hash="91780c7a3ef284d24d548729947ed2b6"/><file name="redirect.phtml" hash="e0821851c2999ccc267eb0eea17e7037"/></dir></dir></dir></dir></dir></target><target name="magelocale"><dir name="de_AT"><file name="Phoenix_Ipayment.csv" hash="5d2ffb386e95c76c9f322c72ce258dd6"/></dir><dir name="de_DE"><file name="Phoenix_Ipayment.csv" hash="5d2ffb386e95c76c9f322c72ce258dd6"/></dir><dir name="en_US"><file name="Phoenix_Ipayment.csv" hash="40920b14dddc34a37ac337fcffdfed8b"/></dir></target><target name="mageweb"><dir name="js"><dir name="phoenix"><dir name="ipayment"><file name="processing.js" hash="08edc6ab364e4d785e9c7ab3ba7d0808"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Phoenix_Ipayment.xml" hash="479990e4abf96a56faa088a59aa7011b"/></dir></target><target name="magecommunity"><dir name="Phoenix"><dir name="Ipayment"><dir name="Block"><dir name="Form"><file name="Cc.php" hash="0880136b032cb6d57c78fdd57a190057"/><file name="Elv.php" hash="665cde97ac549d306a47e9581bcbc9f6"/></dir><dir name="Info"><file name="Cc.php" hash="6615c8baf1bd3bc16c1b02840cc1dc2e"/><file name="Elv.php" hash="d1f41a1f8eebccf90817571b3fffe91e"/></dir><file name="CcForm.php" hash="006d56de9352422d3e3264f9d5802c80"/><file name="Form.php" hash="3f7dd03bf3a6c31eb2222267de9021dd"/><file name="Jsinclude.php" hash="2b8696f1b5b4576f4135f2f2b1aa93dd"/><file name="Redirect.php" hash="fa69eab62e4fbd65c4e2ac7811376480"/></dir><dir name="controllers"><file name="ProcessingController.php" hash="c22b3731aae60a665a8f89bf878c55c7"/></dir><dir name="etc"><file name="config.xml" hash="435f64f6cedb1a6a2cbd9d1ecfbbf3f1"/><file name="system.xml" hash="15317c3e56ff7fc5494763dc046a960b"/></dir><dir name="Helper"><file name="Data.php" hash="981b24f330d8701dce44da10ca12d361"/></dir><dir name="Model"><dir name="Source"><file name="CcType.php" hash="4836bf67788dfc9a5bfccb41cd49c500"/><file name="TransactionType.php" hash="a09829c635485440531485a01d0a72e5"/></dir><file name="Abstract.php" hash="272b25d200f78f86021955576334f469"/><file name="Cc.php" hash="690e10c6c3269127db81fe8529fd70b5"/><file name="Elv.php" hash="7d5599d5541f7e9fdf8da1c44dcdff9f"/><file name="Observer.php" hash="b8a8c08fd0aeb091b703f531d07d30a4"/></dir><dir name="sql"><dir name="phoenix_ipayment_setup"><file name="mysql4-upgrade-1.2.3-1.2.4.php" hash="d7aa246a13492e18a14b926c1d2bf1a4"/></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies/>
+</package>

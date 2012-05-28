@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <mytest_adminhtml_mytest_index>
+        <reference name="content">
+            <block type="mytest/adminhtml_mytest" name="mytest" />
+        </reference>
+    </mytest_adminhtml_mytest_index>
+</layout>

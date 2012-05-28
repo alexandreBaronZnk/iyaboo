@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Esther_Hierp>
+			<version>0.1.0</version>
+		</Esther_Hierp>
+	</modules>
+
+	<frontend>
+		<routers>
+			<hierp>
+				<use>standard</use>
+				<args>
+					<module>Esther_Hierp</module>
+					<frontName>hiERP</frontName>
+				</args>
+			</hierp>
+		</routers>
+	</frontend>
+
+	<global>
+		<helpers>
+			<hierp>
+				<class>Esther_Hierp_Helper</class>
+			</hierp>
+		</helpers>
+		<blocks>
+			<hierp>
+				<class>Esther_Hierp_Block</class>
+			</hierp>
+		</blocks>
+
+		<models>
+			<hierp>
+				<class>Esther_Hierp_Model</class>
+				<resourceModel>hierp_mysql4</resourceModel>
+			</hierp>
+			<hierp_mysql4>
+				<class>Esther_Hierp_Model_Mysql4</class>
+				<entities>
+					<supplier>
+						<table>hierp_supplier</table>
+					</supplier>
+					<contactPerson>
+						<table>hierp_contact_person</table>
+					</contactPerson>
+					<buyOrder>
+						<table>hierp_buyorder</table>
+					</buyOrder>
+					<buyOrderDetail>
+						<table>hierp_buyorder_detail</table>
+					</buyOrderDetail>
+
+				</entities>
+			</hierp_mysql4>
+		</models>
+
+		<resources>
+			<hierp_setup>
+				<setup>
+					<module>Esther_Hierp</module>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</hierp_setup>
+
+			<hierp_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</hierp_write>
+
+			<hierp_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</hierp_read>
+
+		</resources>
+	</global>
+
+	<admin>
+		<routers>
+			<hierp>
+				<use>admin</use>
+				<args>
+					<module>Esther_Hierp</module>
+					<frontname>hiERP</frontname>
+				</args>
+			</hierp>
+		</routers>
+	</admin>
+
+	<adminhtml>
+		<menu>
+			<menu1 translate="title" module="hierp">
+				<title>HiERP</title>
+				<sort_order>60</sort_order>
+				<children>
+					<menuitem1 module="hierp">
+						<title>Suppliers</title>
+						<action>hiERP/adminhtml_supplier/</action>
+					</menuitem1>
+					<menuitem2 module="hierp">
+						<title>ContactPerson</title>
+						<action>hiERP/adminhtml_contactPerson/</action>
+					</menuitem2>
+					<menuitem3 module="hierp">
+						<title>BuyOrder</title>
+						<action>hiERP/adminhtml_buyOrder/</action>
+					</menuitem3>
+					<menuitem4 module="hierp">
+						<title>BuyOrder_Detail</title>
+						<action>hiERP/adminhtml_buyOrderDetail/</action>
+					</menuitem4>
+				</children>
+			</menu1>
+		</menu>
+		
+	</adminhtml>
+
+</config>

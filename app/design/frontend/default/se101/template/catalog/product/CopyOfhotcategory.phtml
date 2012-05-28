@@ -1,0 +1,123 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category   design_default
+ * @package    Mage
+ * @copyright  Copyright (c) 2008 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
+ * @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+
+/**
+ * Product list template
+ *
+ * @see Mage_Catalog_Block_Product_List
+ */
+?>
+
+
+<style type=”text/css”>
+.menu { 
+font-family: arial, sans-serif; 
+width:750px; 
+margin:0; 
+margin:50px 0; 
+} 
+/* remove the bullets and set the margin and padding to zero for the unordered list */ 
+.menu ul { 
+padding:0; 
+margin:0; 
+list-style-type: none; 
+} 
+/* 浮动列表，因此可以让items在一行上，并且他们的相对定位可以让下面的列表显示在正确的位置上*/ 
+.menu ul li { 
+float:left; 
+position:relative; 
+} 
+/* style the links to be 104px wide by 30px high with a top and right border 1px solid white. 
+Set the background color and the font size. */ 
+.menu ul li a, .menu ul li a:visited { 
+display:block; 
+text-align:center; 
+text-decoration:none; 
+width:104px; 
+height:30px; 
+color:#000; 
+border:1px solid #fff; 
+border-width:1px 1px 0 0; 
+background:#c9c9a7; 
+line-height:30px; 
+font-size:11px; 
+} 
+/* make the dropdown ul invisible */ 
+.menu ul li ul { 
+display: none; 
+} 
+
+/* specific to non IE browsers */ 
+/* set the background and foreground color of the main menu li on hover */ 
+.menu ul li:hover a { 
+color:#fff; 
+background:#b3ab79; 
+} 
+/* make the sub menu ul visible and position it beneath the main menu list item */ 
+.menu ul li:hover ul { 
+display:block; 
+position:absolute; 
+top:31px; 
+left:0; 
+width:105px; 
+} 
+/* style the background and foreground color of the submenu links */ 
+.menu ul li:hover ul li a { 
+display:block; 
+background:#faeec7; 
+color:#000; 
+} 
+/* style the background and forground colors of the links on hover */ 
+.menu ul li:hover ul li a:hover { 
+background:#dfc184; 
+color:#000; 
+}
+
+
+</style>
+
+  
+<script type="text/javascript" src="js/protofish.js"></script>
+
+<div class="block block-hot-categories">
+<div class="block-title"><strong><span><?php
+echo $this->__ ( 'Hot Categories' );
+?></span></strong></div>
+<div class="block-content">
+<?php
+$_Categories = $this->_getCategories ()?>
+	<?php
+	echo $_Categories?>
+
+</div>
+</div>
+<script type='text/javascript'>
+   document.observe('dom:loaded', function(){
+      new ProtoFish('menu-1', '200', 'hover', false, true, true);
+   });
+</script>

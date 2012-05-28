@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Esther_Hishop>
+			<version>0.1.0</version>
+		</Esther_Hishop>
+	</modules>
+
+	<frontend>
+		<routers>
+			<hishop>
+				<use>standard</use>
+				<args>
+					<module>Esther_Hishop</module>
+					<frontName>hishop</frontName>
+				</args>
+			</hishop>
+		</routers>
+	</frontend>
+
+	<global>
+		<helpers>
+			<hishop>
+				<class>Esther_Hishop_Helper</class>
+			</hishop>
+		</helpers>
+		<blocks>
+			<hishop>
+				<class>Esther_Hishop_Block</class>
+			</hishop>
+		</blocks>
+
+		<models>
+			<app>
+				<rewrite>
+					<app>Mage_Core_Model_App</app>
+				</rewrite>
+			</app>
+			<hishop>
+				<class>Esther_Hishop_Model</class>
+				<resourceModel>hishop_mysql4</resourceModel>
+			</hishop>
+			<hishop_mysql4>
+				<class>Esther_Hishop_Model_Mysql4</class>
+				<entities>
+					<user>
+						<table>hishop_user</table>
+					</user>
+					<shop>
+						<table>hishop_shop</table>
+					</shop>
+				</entities>
+			</hishop_mysql4>
+		</models>
+
+		<resources>
+			<hishop_setup>
+				<setup>
+					<module>Esther_Hishop</module>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</hishop_setup>
+
+			<hishop_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</hishop_write>
+
+			<hishop_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</hishop_read>
+
+		</resources>
+	</global>
+
+	<admin>
+		<routers>
+			<hishop>
+				<use>admin</use>
+				<args>
+					<module>Esther_Hishop</module>
+					<frontname>hishop</frontname>
+				</args>
+			</hishop>
+		</routers>
+	</admin>
+
+	<adminhtml>
+		<menu>
+			<menu1 translate="title" module="hishop">
+				<title>Hishop</title>
+				<sort_order>60</sort_order>
+				<children>
+					<menuitem1 module="hishop">
+						<title>Shops</title>
+						<action>hishop/manage_shop/</action>
+					</menuitem1>
+				</children>
+			</menu1>
+		</menu>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<menu1 translate="title" module="hishop">
+							<title>Hishop</title>
+							<sort_order>60</sort_order>
+							<children>
+								<menuitem1>
+									<title>Shops</title>
+								</menuitem1>
+							</children>
+						</menu1>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+	</adminhtml>
+
+</config>

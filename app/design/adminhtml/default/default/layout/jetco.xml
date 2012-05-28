@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <jetco_adminhtml_jetco_index>
+        <reference name="content">
+            <block type="jetco/adminhtml_jetco" name="jetco" />
+        </reference>
+    </jetco_adminhtml_jetco_index>
+</layout>

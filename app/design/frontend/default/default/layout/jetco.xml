@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+    </default>
+    <jetco_index_index>
+        <reference name="content">
+            <block type="jetco/jetco" name="jetco" template="jetco/jetco.phtml" />
+        </reference>
+    </jetco_index_index>
+</layout> 

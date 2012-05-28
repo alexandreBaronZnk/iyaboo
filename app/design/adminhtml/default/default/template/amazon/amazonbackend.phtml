@@ -1,0 +1,63 @@
+<h1>Upload Amazon CSV</h1><br>
+<?php
+$message="file";
+
+if(isset($_REQUEST['action'])=="uploadfile")
+{
+$message="invalid file";
+}
+
+?>
+<style>
+.csv_btn{
+height:25px; width:80px; border:none;
+}
+
+</style>
+<script>
+function check()
+{
+var filecheck=document.getElementById("ffile").value;
+var ext=filecheck.split(".");
+if(ext[1]=="csv")
+{
+document.getElementById("errorbox").innerHTML="";
+
+}
+else
+{
+document.getElementById("errorbox").innerHTML="Invalid File ";
+}
+}
+</script>
+<form name="csvcheck" method="post" enctype="multipart/form-data" action="http://174.121.35.154/~golf/check_csv.php">
+<table width="500" height="130" border="0" align="center" align="center" style="margin-left:300px;border:solid 1px #425E66;">
+<input type="hidden" name="action" value="uploadfile"/>
+  <tr style="height:30px;">
+    <td style="width:200px">
+	<div id="progress" style="display:none; height:35px; text-align:right;" >
+	<img src="<?php echo $this->getSkinUrl($this->__('images/loading.gif')) ?>">
+	</div>
+	<span style="color:#FF0000;padding-left:30px; font-size:13px; text-align:right; font-weight:bold;" id="errorbox"></span>	
+	</td>
+  </tr>
+
+  <tr>
+    <td> </td>
+  </tr>
+  <tr>
+  <td style="padding-left:20px;">Choose File :</td>
+    <td>
+<input type="file" name="ffile" id="ffile" value="" onblur="check()"/>
+	</td>
+    
+  </tr>
+  <tr>
+  <td></td>
+    <td style="padding-left:20px;">
+	<input type="submit" value="Upload"   /> 
+	</td>
+    
+  </tr>
+</table>
+</form>

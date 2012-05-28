@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+<amazon_adminhtml_amazonbackend_index>
+			<reference name="content">
+				<block type="amazon/adminhtml_upload" name="amazon_uploadform"/>
+			</reference>
+		</amazon_adminhtml_amazonbackend_index>
+</layout>

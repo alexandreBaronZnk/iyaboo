@@ -1,0 +1,115 @@
+
+ <div class="right-top-nav" >
+ <ul>
+    <li class="right-top">
+	<div class="top-nav-title" ><span><a href="categories" style='color:white' ><?php echo $this->__('All Categories') ?></a></span>
+	<?php 
+
+$routeName = Mage::app()->getRequest()->getRouteName();
+$identifier = Mage::getSingleton('cms/page')->getIdentifier();
+if($routeName != 'cms' || !strstr($identifier,'home'))  :
+?>
+	<div class="dropdown"><img src='<?php echo $this->getSkinUrl("images/dropdown.gif");?>' /></div> 
+
+	<div class="categories_menu" style="display: none;">
+
+
+<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/jquery-1.4.2.min.js') ?>"></script>
+
+
+<script type='text/javascript' src="<?php echo $this->getSkinUrl('js/jquery.hoverIntent.minified.js') ?>"></script>
+<script type='text/javascript' src="<?php echo $this->getSkinUrl('js/jquery.dcverticalmegamenu.1.3.js')?>"></script>
+
+
+<div class="wrap2">
+
+<div class="demo-container clear">
+<div class="test">
+<ul id="mega-1" class="mega-menu">
+<?php foreach($this->getStoreCategories() as $_category): ?>
+<li><a href="<?php echo $this->getCategoryUrl($_category) ?>"><?php echo $this->htmlEscape($_category->getName()) ?></a>
+<ul>
+<li>
+<ul>
+<?php
+$_catid=$_category->getId();
+$category=Mage::getModel('catalog/category')->load($_catid);
+$subcategory=$category->getAllChildren(true);
+array_shift($subcategory);
+foreach($subcategory as $sub)
+{
+	$sub1=Mage::getModel('catalog/category')->load($sub); ?>
+<li><a href="<?php echo $sub1->getUrl(); ?>"><?php echo $sub1->getName(); ?></a></li>
+<?php } ?>
+</ul></li></ul></li>
+<?php endforeach ?>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+	</div>
+	<script language="javascript">
+
+	jQuery.noConflict();
+
+	jQuery(document).ready(function($){
+
+			   $('.top-nav-title').hover(function() {
+				
+					$('.categories_menu').show();
+					
+					$('#mega-1').dcVerticalMegaMenu({
+				   		rowItems: '3',
+				   		speed: 'fast',
+				   		effect: 'show',
+				   		direction: 'right'
+				   	});
+				   	$('#mega-2').dcVerticalMegaMenu({
+				   		rowItems: '3',
+				   		speed: 'slow',
+				   		effect: 'fade',
+				   		direction: 'left'
+				   	});
+				   	$('#mega-3').dcVerticalMegaMenu({
+				   		rowItems: '4',
+				   		speed: 'slow',
+				   		effect: 'slide',
+				   		direction: 'right'
+				   	});
+				   	$('#mega-4').dcVerticalMegaMenu({
+				   		rowItems: '3',
+				   		speed: 'fast',
+				   		effect: 'slide',
+				   		direction: 'left'
+				   	});
+				}, function() {
+					$('.categories_menu').hide();
+				});
+
+			   $(".top-nav-title,.categories_menu").mouseover(function() {   
+		            $(".categories_menu").addClass('subhover');   
+
+		        }).mouseout(function() {
+		            $(".categories_menu").removeClass('subhover'); 
+		    });   
+
+			 
+	});  
+		
+	</script>
+	<?php endif ?>
+	
+	
+	
+        <div class="right-nav-container">
+	    <div id="topcatbg"></div>
+ 
+	</div>
+    </li>
+</ul>
+</div>
+
+
+

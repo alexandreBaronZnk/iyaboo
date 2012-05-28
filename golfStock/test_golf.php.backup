@@ -1,0 +1,147 @@
+<?php
+
+define('MAGENTO', realpath('/opt/src/iyaboo'));
+ini_set('memory_limit', '128M');
+
+require_once MAGENTO . '/app/Mage.php';
+
+Mage::app()->setCurrentStore(Mage_Core_Model_App::ADMIN_STORE_ID);
+
+$nameArray = array("golf1", "golf2");
+$handArray = array(127,128);
+//$flexArray = array('5', '6', '5', '6');
+
+for ($i = 0; $i < 4; $i++) {
+    $name = $nameArray[$i];
+    $product = Mage::getModel('catalog/product')->loadByAttribute('sku', $name);
+
+    if (!$product)
+        $product = Mage::getModel('catalog/product');
+
+    $product->setTypeId('simple');
+    $product->setTaxClassId(2); //none
+    $product->setWebsiteIds(array(1));  // store id
+    $product->setAttributeSetId(63); //Golf Attribute Set
+    $product->setSku($name);
+    $product->setCategoryIds(array(13));
+    if ($product->getId())
+        $product->setName($name . 'update');
+    else
+        $product->setName($name);
+    $product->setDescription($name);
+    $product->setPrice("129.95");
+    $product->setShortDescription($name);
+    $product->setWeight(0);
+    $product->setStatus(1); //enabled
+    $product->setVisibility(1); //nowhere
+//    $product->setStockData(array(
+//        'is_in_stock' => 1,
+//        'qty' => 99999
+//    ));
+
+    $product->setGolfHand($handArray[$i]);
+   // $product->setGolfFlex($flexArray[$i]);
+   // $product->setGolfVariationTheme('golfvariationtheme');
+    try {
+        $product->save();
+        $productId = $product->getId();
+        echo $product->getId() . ", added\n";
+    } catch (Exception $e) {
+        echo "$name not added\n";
+        echo "exception:$e";
+    }
+}
+
+
+$configurableProductsData = array(
+    '3514' => array(
+        0 => array(
+            'attribute_id' => 951,
+            'label' => 'left',
+            //'value_index' => 127,
+    )),
+    '3515' => array(
+        0 => array(
+            'attribute_id' => 951,
+            'label' => 'right',
+           // 'value_index' => 128
+    ))
+);
+
+$configurableAttributesData = array(
+    0 => array(
+        'id' => NULL,
+        'label' => 'Hand',
+        'use_default' => '0',
+        'position' => '0',
+        'values' => array(
+            0 => array(
+                'label' => 'left2', //optional, will be replaced by the modified api.php
+                'store_label' => 'left2',
+                'default_label' => 'left2',
+                'use_default_value' => 1,
+                //'value_index' => 127,
+                'attribute_id' => 951,
+                'is_percent' => '',
+                'pricing_value' => ''
+            ),
+            1 => array(
+                'label' => 'right', //optional, will be replaced by the modified api.php
+                'store_label' => 'right',
+                'default_label' => 'right',
+                'use_default_value' => 1,
+                //'value_index' => 128,
+                'attribute_id' => 951,
+                'is_percent' => '',
+                'pricing_value' => ''
+            )
+        ),
+        'attribute_id' => 951, //get this value from attributes api call
+        'attribute_code' => 'golf_hand', //get this value from attributes api call
+        'frontend_label' => 'Hand', //optional, will be replaced by the modifed api.php
+        'store_label' => 'Hand',
+        'html_id' => 'configurable_attribute_0'
+    )
+);
+
+$name = 'golf_conf____2222';
+$product = Mage::getModel('catalog/product')->loadByAttribute('sku', $name);
+
+if ($product)
+    $product->delete();
+
+$product = Mage::getModel('catalog/product');
+
+$product->setTypeId('configurable');
+$product->setTaxClassId(2); //none
+$product->setWebsiteIds(array(1));  // store id
+$product->setAttributeSetId(63); //Golf Attribute Set
+$product->setSku($name);
+if ($product->getId())
+    $product->setName($name . 'update');
+else
+    $product->setName($name);
+$product->setDescription($name);
+$product->setCategoryIds(array(13));
+$product->setPrice("129.95");
+$product->setShortDescription($name);
+$product->setWeight(0);
+$product->setStatus(1); //enabled
+$product->setVisibility(4); //nowhere
+//$product->setStockData(array(
+//    'is_in_stock' => 1
+//));
+
+$product->setConfigurableProductsData($configurableProductsData);
+$product->setConfigurableAttributesData($configurableAttributesData);
+$product->setCanSaveConfigurableAttributes(true);
+
+try {
+    $product->save();
+    $productId = $product->getId();
+    echo $product->getId() . ", added\n";
+} catch (Exception $e) {
+    echo "$name not added\n";
+    echo "exception:$e";
+}
+?>

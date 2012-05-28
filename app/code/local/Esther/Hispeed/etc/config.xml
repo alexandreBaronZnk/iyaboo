@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Esther_Hispeed>
+			<version>0.1.0</version>
+		</Esther_Hispeed>
+	</modules>
+
+	<frontend>
+		<routers>
+			<hispeed>
+				<use>standard</use>
+				<args>
+					<module>Esther_Hispeed</module>
+					<frontName>hispeed</frontName>
+				</args>
+			</hispeed>
+		</routers>
+		<default>
+			<hispeed>
+				<purgeall_key>
+					<key>#Fj1nzljh</key>
+				</purgeall_key>
+				<enabled>1</enabled>
+			</hispeed>
+		</default>
+	</frontend>
+
+	<global>
+		<events>
+			<customer_login>
+				<observers>
+					<hispeed>
+						<type>model</type>
+						<class>Esther_Hispeed_Model_Observer</class>
+						<method>customerLoginAction</method>
+					</hispeed>
+				</observers>
+			</customer_login>
+			<customer_logout>
+				<observers>
+					<hispeed>
+						<type>model</type>
+						<class>Esther_Hispeed_Model_Observer</class>
+						<method>customerLogoutAction</method>
+					</hispeed>
+				</observers>
+			</customer_logout>
+
+			<checkout_cart_save_after>
+				<observers>
+					<hispeed>
+						<type>model</type>
+						<class>Esther_Hispeed_Model_Observer</class>
+						<method>cartUpdateAction</method>
+					</hispeed>
+				</observers>
+			</checkout_cart_save_after>
+			
+			<core_block_abstract_to_html_before>
+				<observers>
+					<cacheBlock>
+						<type>singleton</type>
+						<class>Esther_Hispeed_Model_Observer</class>
+						<method>blockCacheAction</method>
+					</cacheBlock>
+				</observers>
+			</core_block_abstract_to_html_before>
+
+		</events>
+	</global>
+
+</config>

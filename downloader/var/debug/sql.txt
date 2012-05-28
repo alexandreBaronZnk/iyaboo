@@ -1,0 +1,338 @@
+## 1017 ## CONNECT
+TIME: 0.0019
+
+## 1017 ## QUERY
+SQL: SET NAMES utf8
+AFF: 0
+TIME: 0.0038
+
+## 1017 ## QUERY
+SQL: select website_id, code, name from core_website
+AFF: 2
+TIME: 0.0003
+
+## 1017 ## QUERY
+SQL: select store_id, code, name, website_id from core_store order by sort_order asc
+AFF: 3
+TIME: 0.0002
+
+## 1017 ## QUERY
+SQL: select scope, scope_id, path, value from core_config_data
+AFF: 421
+TIME: 0.0007
+
+## 1017 ## QUERY
+SQL: SELECT `main_table`.* FROM `core_store` AS `main_table` ORDER BY CASE WHEN main_table.store_id = 0 THEN 0 ELSE 1 END ASC, main_table.sort_order ASC, main_table.name ASC
+AFF: 3
+TIME: 0.0005
+
+## 1017 ## QUERY
+SQL: SELECT `main_table`.* FROM `core_website` AS `main_table` ORDER BY main_table.sort_order ASC, main_table.name ASC
+AFF: 2
+TIME: 0.0004
+
+## 1017 ## QUERY
+SQL: SELECT `main_table`.* FROM `core_store_group` AS `main_table` ORDER BY main_table.name ASC
+AFF: 2
+TIME: 0.0003
+
+## 1036 ## CONNECT
+TIME: 0.0026
+
+## 1036 ## QUERY
+SQL: SET NAMES utf8
+AFF: 0
+TIME: 0.0046
+
+## 1036 ## QUERY
+SQL: select website_id, code, name from core_website
+AFF: 2
+TIME: 0.0002
+
+## 1036 ## QUERY
+SQL: select store_id, code, name, website_id from core_store order by sort_order asc
+AFF: 3
+TIME: 0.0002
+
+## 1036 ## QUERY
+SQL: select scope, scope_id, path, value from core_config_data
+AFF: 421
+TIME: 0.0004
+
+## 1036 ## QUERY
+SQL: SELECT `main_table`.* FROM `core_store` AS `main_table` ORDER BY CASE WHEN main_table.store_id = 0 THEN 0 ELSE 1 END ASC, main_table.sort_order ASC, main_table.name ASC
+AFF: 3
+TIME: 0.0005
+
+## 1036 ## QUERY
+SQL: SELECT `main_table`.* FROM `core_website` AS `main_table` ORDER BY main_table.sort_order ASC, main_table.name ASC
+AFF: 2
+TIME: 0.0003
+
+## 1036 ## QUERY
+SQL: SELECT `main_table`.* FROM `core_store_group` AS `main_table` ORDER BY main_table.name ASC
+AFF: 2
+TIME: 0.0003
+
+## 1036 ## QUERY
+SQL: SELECT `admin_user`.* FROM `admin_user` WHERE (username=:username)
+BIND: Array
+(
+    [username] => admin
+)
+
+AFF: 1
+TIME: 0.0008
+
+## 1036 ## QUERY
+SQL: SELECT `admin_role`.* FROM `admin_role` WHERE (parent_id > 0 AND user_id = 1)
+AFF: 1
+TIME: 0.0003
+
+## 1036 ## QUERY
+SQL: UPDATE `admin_user` SET `logdate` = ?, `lognum` = ? WHERE (user_id='1')
+BIND: Array
+(
+    [0] => 2011-09-07 03:04:07
+    [1] => 130
+)
+
+AFF: 1
+TIME: 0.0013
+
+## 1036 ## QUERY
+SQL: select * from admin_role order by tree_level
+AFF: 2
+TIME: 0.0003
+
+## 1036 ## QUERY
+SQL: select r.*, a.assert_type, a.assert_data
+            from admin_rule r left join admin_assert a on a.assert_id=r.assert_id
+AFF: 1
+TIME: 0.0002
+
+## 1036 ## CONNECT
+TIME: 0.0004
+
+## 1036 ## QUERY
+SQL: SET NAMES utf8
+AFF: 0
+TIME: 0.0014
+
+## 1036 ## QUERY
+SQL: select website_id, code, name from core_website
+AFF: 2
+TIME: 0.0002
+
+## 1036 ## QUERY
+SQL: select store_id, code, name, website_id from core_store order by sort_order asc
+AFF: 3
+TIME: 0.0002
+
+## 1036 ## QUERY
+SQL: select scope, scope_id, path, value from core_config_data
+AFF: 421
+TIME: 0.0003
+
+## 1036 ## QUERY
+SQL: SELECT `main_table`.* FROM `core_store` AS `main_table` ORDER BY CASE WHEN main_table.store_id = 0 THEN 0 ELSE 1 END ASC, main_table.sort_order ASC, main_table.name ASC
+AFF: 3
+TIME: 0.0004
+
+## 1036 ## QUERY
+SQL: SELECT `main_table`.* FROM `core_website` AS `main_table` ORDER BY main_table.sort_order ASC, main_table.name ASC
+AFF: 2
+TIME: 0.0003
+
+## 1036 ## QUERY
+SQL: SELECT `main_table`.* FROM `core_store_group` AS `main_table` ORDER BY main_table.name ASC
+AFF: 2
+TIME: 0.0003
+
+## 1019 ## CONNECT
+TIME: 0.0004
+
+## 1019 ## QUERY
+SQL: SET NAMES utf8
+AFF: 0
+TIME: 0.0015
+
+## 1019 ## QUERY
+SQL: select website_id, code, name from core_website
+AFF: 2
+TIME: 0.0002
+
+## 1019 ## QUERY
+SQL: select store_id, code, name, website_id from core_store order by sort_order asc
+AFF: 3
+TIME: 0.0002
+
+## 1019 ## QUERY
+SQL: select scope, scope_id, path, value from core_config_data
+AFF: 421
+TIME: 0.0003
+
+## 1019 ## QUERY
+SQL: SELECT `main_table`.* FROM `core_store` AS `main_table` ORDER BY CASE WHEN main_table.store_id = 0 THEN 0 ELSE 1 END ASC, main_table.sort_order ASC, main_table.name ASC
+AFF: 3
+TIME: 0.0004
+
+## 1019 ## QUERY
+SQL: SELECT `main_table`.* FROM `core_website` AS `main_table` ORDER BY main_table.sort_order ASC, main_table.name ASC
+AFF: 2
+TIME: 0.0003
+
+## 1019 ## QUERY
+SQL: SELECT `main_table`.* FROM `core_store_group` AS `main_table` ORDER BY main_table.name ASC
+AFF: 2
+TIME: 0.0003
+
+## 1036 ## CONNECT
+TIME: 0.0004
+
+## 1036 ## QUERY
+SQL: SET NAMES utf8
+AFF: 0
+TIME: 0.0014
+
+## 1036 ## QUERY
+SQL: select website_id, code, name from core_website
+AFF: 2
+TIME: 0.0002
+
+## 1036 ## QUERY
+SQL: select store_id, code, name, website_id from core_store order by sort_order asc
+AFF: 3
+TIME: 0.0002
+
+## 1036 ## QUERY
+SQL: select scope, scope_id, path, value from core_config_data
+AFF: 421
+TIME: 0.0004
+
+## 1036 ## QUERY
+SQL: SELECT `main_table`.* FROM `core_store` AS `main_table` ORDER BY CASE WHEN main_table.store_id = 0 THEN 0 ELSE 1 END ASC, main_table.sort_order ASC, main_table.name ASC
+AFF: 3
+TIME: 0.0004
+
+## 1036 ## QUERY
+SQL: SELECT `main_table`.* FROM `core_website` AS `main_table` ORDER BY main_table.sort_order ASC, main_table.name ASC
+AFF: 2
+TIME: 0.0003
+
+## 1036 ## QUERY
+SQL: SELECT `main_table`.* FROM `core_store_group` AS `main_table` ORDER BY main_table.name ASC
+AFF: 2
+TIME: 0.0003
+
+## 1036 ## CONNECT
+TIME: 0.0004
+
+## 1036 ## QUERY
+SQL: SET NAMES utf8
+AFF: 0
+TIME: 0.0014
+
+## 1036 ## QUERY
+SQL: select website_id, code, name from core_website
+AFF: 2
+TIME: 0.0002
+
+## 1036 ## QUERY
+SQL: select store_id, code, name, website_id from core_store order by sort_order asc
+AFF: 3
+TIME: 0.0002
+
+## 1036 ## QUERY
+SQL: select scope, scope_id, path, value from core_config_data
+AFF: 421
+TIME: 0.0003
+
+## 1036 ## QUERY
+SQL: SELECT `main_table`.* FROM `core_store` AS `main_table` ORDER BY CASE WHEN main_table.store_id = 0 THEN 0 ELSE 1 END ASC, main_table.sort_order ASC, main_table.name ASC
+AFF: 3
+TIME: 0.0004
+
+## 1036 ## QUERY
+SQL: SELECT `main_table`.* FROM `core_website` AS `main_table` ORDER BY main_table.sort_order ASC, main_table.name ASC
+AFF: 2
+TIME: 0.0004
+
+## 1036 ## QUERY
+SQL: SELECT `main_table`.* FROM `core_store_group` AS `main_table` ORDER BY main_table.name ASC
+AFF: 2
+TIME: 0.0004
+
+## 1036 ## QUERY
+SQL: select website_id, code, name from core_website
+AFF: 2
+TIME: 0.0003
+
+## 1036 ## QUERY
+SQL: select store_id, code, name, website_id from core_store order by sort_order asc
+AFF: 3
+TIME: 0.0002
+
+## 1036 ## QUERY
+SQL: select scope, scope_id, path, value from core_config_data
+AFF: 421
+TIME: 0.0003
+
+## 1036 ## QUERY
+SQL: SELECT `core_resource`.`code`, `core_resource`.`version` FROM `core_resource`
+AFF: 69
+TIME: 0.0005
+
+## 1036 ## QUERY
+SQL: SELECT indexer_code FROM index_process
+AFF: 9
+TIME: 0.0003
+
+## 1036 ## QUERY
+SQL: SHOW TABLES LIKE 'sales_flat_quote_payment'
+AFF: 1
+TIME: 0.0931
+
+## 1036 ## QUERY
+SQL: SHOW TABLES LIKE 'sales_order_entity_xvarchar'
+AFF: 0
+TIME: 0.0014
+
+## 1036 ## QUERY
+SQL: INSERT INTO `core_resource` (`code`, `version`) VALUES (?, ?)
+BIND: Array
+(
+    [0] => phoenix_ipayment_setup
+    [1] => 1.2.4
+)
+
+AFF: 1
+TIME: 0.0077
+
+## 1036 ## QUERY
+SQL: UPDATE `core_resource` SET `code` = ?, `version` = ? WHERE (code='phoenix_ipayment_setup')
+BIND: Array
+(
+    [0] => phoenix_ipayment_setup
+    [1] => 1.3.0
+)
+
+AFF: 1
+TIME: 0.0010
+
+## 1036 ## QUERY
+SQL: SELECT `core_resource`.`code`, `core_resource`.`data_version` FROM `core_resource`
+AFF: 70
+TIME: 0.0006
+
+## 1036 ## QUERY
+SQL: UPDATE `core_resource` SET `code` = ?, `data_version` = ? WHERE (code='phoenix_ipayment_setup')
+BIND: Array
+(
+    [0] => phoenix_ipayment_setup
+    [1] => 1.3.0
+)
+
+AFF: 1
+TIME: 0.0016
+

@@ -1,0 +1,60 @@
+<?xml version="1.0"  encoding="UTF-8"?>
+<config>
+    <modules>
+        <Ambassador_Jetco>
+            <version>1.0.0</version>
+        </Ambassador_Jetco>
+    </modules>
+    
+  
+    
+    <global>
+        <models>
+            <jetco>
+                <class>Ambassador_Jetco_Model</class>
+            </jetco>
+        </models>
+        <helpers>
+            <jetco>
+                <class>Ambassador_Jetco_Helper</class>
+            </jetco>
+ 
+        </helpers>
+        <blocks>
+            <jetco>
+                <class>Ambassador_Jetco_Block</class>
+            </jetco>
+        </blocks>
+    </global>
+ 
+    <default>
+        <payment>
+            <jetco>
+                <model>jetco/payment</model>// very important thing, here you select the model for your payment method
+                <active>1</active>
+                <order_status>pending</order_status>
+                <title>JETCO</title>
+                <payment_action>sale</payment_action>
+                <gateway_url>https://ujpg.jtetbwkl.com.hk/PayPage/payPage.jsp</gateway_url>
+                <submit_url>http://xiaomaizi.net:8080/payment.jsp</submit_url>
+                <return_url>http://xiaomaizi.net:8080/payment.jsp</return_url>
+                <merchant_id>80012813001097</merchant_id>
+                <allowspecific>0</allowspecific>
+                <sort_order>1</sort_order>
+            </jetco>
+        </payment>
+    </default>
+    
+    <frontend>
+        <routers>
+            <jetco>
+                <use>standard</use>
+                <args>
+                    <module>Ambassador_Jetco</module>
+                    <frontName>jetco</frontName>
+                </args>
+            </jetco>
+        </routers>
+    </frontend>
+
+</config>

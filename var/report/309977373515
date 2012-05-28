@@ -1,0 +1,10 @@
+a:5:{i:0;s:261:"Error in file: "/opt/src/iyaboo/app/code/local/Esther/Hierp/sql/hierp_setup/mysql4-install-0.1.0.php" - SQLSTATE[HY000]: General error: 1293 Incorrect table definition; there can be only one TIMESTAMP column with CURRENT_TIMESTAMP in DEFAULT or ON UPDATE clause";i:1;s:975:"#0 /opt/src/iyaboo/app/code/core/Mage/Core/Model/Resource/Setup.php(390): Mage::exception('Mage_Core', 'Error in file: ...')
+#1 /opt/src/iyaboo/app/code/core/Mage/Core/Model/Resource/Setup.php(276): Mage_Core_Model_Resource_Setup->_modifyResourceDb('install', '', '0.1.0')
+#2 /opt/src/iyaboo/app/code/core/Mage/Core/Model/Resource/Setup.php(240): Mage_Core_Model_Resource_Setup->_installResourceDb('0.1.0')
+#3 /opt/src/iyaboo/app/code/core/Mage/Core/Model/Resource/Setup.php(161): Mage_Core_Model_Resource_Setup->applyUpdates()
+#4 /opt/src/iyaboo/app/code/local/Mage/Core/Model/App.php(577): Mage_Core_Model_Resource_Setup::applyAllUpdates()
+#5 /opt/src/iyaboo/app/code/local/Mage/Core/Model/App.php(455): Mage_Core_Model_App->_initModules()
+#6 /opt/src/iyaboo/app/code/local/Mage/Core/Model/App.php(406): Mage_Core_Model_App->initFirst()
+#7 /opt/src/iyaboo/app/Mage.php(627): Mage_Core_Model_App->run(Array)
+#8 /opt/src/iyaboo/index.php(82): Mage::run('', 'store')
+#9 {main}";s:3:"url";s:79:"/index.php/hiERP/adminhtml_supplier/index/key/634d93ea092da72faf95fcd7f48f424f/";s:11:"script_name";s:10:"/index.php";s:4:"skin";s:7:"default";}

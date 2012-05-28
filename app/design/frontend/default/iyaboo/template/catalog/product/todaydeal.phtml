@@ -1,0 +1,53 @@
+<script type="text/javascript"
+	src="<?php echo $this->getSkinUrl('js/jquery-1.4.2.min.js') ?>"></script>
+<script
+	type='text/javascript'
+	src="<?php echo $this->getSkinUrl('js/jcarousellite_1.0.1.min.js')?>"></script>
+
+<div class="todaydeal"  style=" ">
+<div style="margin-top:2px;margin-bottom:2px;"><img src="<?php echo $this->getSkinUrl('images/dailydeals.gif') ?>"/></div>
+<div style="float:left;margin-top:65px;margin-left:5px;"><img class="prev" src="<?php echo $this->getSkinUrl('images/left.gif') ?>"/></div>
+<div class="todaydeal_slider" style="float:left;height:151px;margin-left:5px">
+<ul>
+<?php $_productCollection=$this->getLoadedProductCollection() ?>
+<?php  $_iterator=0; foreach ($_productCollection as $_product): ?>
+	<li>
+	<div style="width: 90px; margin-left: 10px"><a class="product-img"
+		href="<?php echo $_product->getProductUrl() ?>"
+		title="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>">
+	<img class="todaydeal_img"
+		src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(80, 80); ?>"
+		width="80" height="80"
+		alt="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>"
+		title="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" />
+	</a> <p/>
+	<?php
+	$productName = $this->htmlEscape($_product->getName());
+	if(strlen($productName)>20)
+	$productNameTrimmed = substr($productName,0,20) . '...';
+	?> <a href="<?php echo $_product->getProductUrl() ?>"
+		title="<?php echo $productName  ?>"><?php echo  $productNameTrimmed ?></a>
+	<p class="home-price"><?php echo $this->getPriceHtml($_product, true) ?></p>
+	</div>
+	</li>
+	<?php if(++$_iterator>3) {break;} ?>
+	<?php endforeach ?>
+</ul>
+</div>
+<div style="float:left;margin-top:65px;margin-left:5px"><img class="next" src="<?php echo $this->getSkinUrl('images/right.gif') ?>"/></div>
+<div><img width="240" height="30" src="<?php echo $this->getSkinUrl('images/ebay.jpg')?>"/></div>
+</div>
+
+<script type="text/javascript">
+
+jQuery.noConflict();
+jQuery(document).ready(function($){
+	$(function(){
+		$(".todaydeal_slider").jCarouselLite({
+			btnNext: ".next",
+			btnPrev: ".prev",
+			visible:  2
+		});
+	});
+});
+</script>

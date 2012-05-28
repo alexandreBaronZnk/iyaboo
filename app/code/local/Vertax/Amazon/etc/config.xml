@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<config>
+      <modules>
+        <Vertax_Amazon>
+          <version>1.4.2</version>
+        </Vertax_Amazon>
+      </modules>
+	  
+   <global>    
+      <helpers>
+       <amazon>
+           <class>Vertax_Amazon_Helper</class>
+       </amazon>
+      </helpers>   
+
+	  <blocks><amazon><class>Vertax_Amazon_Block</class></amazon></blocks>
+   </global> 
+   <admin>
+			<routers>
+				<amazon>
+					<use>admin</use>
+					<args>
+						<module>Vertax_Amazon</module>
+						<frontName>amazon</frontName>
+					</args>
+				</amazon>
+			</routers>
+		    </admin><adminhtml>
+		<menu>
+			<amazon module="amazon">
+				<title>Amazon CSV</title>
+				<sort_order>100</sort_order>
+				<children>
+				<amazonbackend module="amazon">
+						<title>Amazon Upload CSV</title>
+						<sort_order>0</sort_order>
+						<action>amazon/adminhtml_amazonbackend</action>
+					</amazonbackend>
+				</children>
+			</amazon>
+		</menu>
+		<acl>
+			<resources>
+				<all>
+				    <title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<amazon translate="title" module="amazon">
+							<title>Amazon</title>
+							<sort_order>1000</sort_order>
+							<children>
+                                <amazonbackend translate="title">
+									<title>Amazon Upload Csv</title>
+								</amazonbackend>
+							</children>
+					   </amazon>
+					</children>
+				</admin>
+
+			</resources>
+		</acl>
+
+		<layout>
+			<updates>
+				<amazon>
+				    <file>amazon.xml</file>
+				</amazon>
+			</updates>
+		</layout>
+	</adminhtml>
+
+</config> 

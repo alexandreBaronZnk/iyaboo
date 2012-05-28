@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+<modules>
+   <Vertax_Amazon>
+      <active>true</active>
+      <codePool>local</codePool>
+      <version>1.4.2</version>
+   </Vertax_Amazon>
+</modules>
+</config>

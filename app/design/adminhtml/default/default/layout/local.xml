@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+    <hierp_adminhtml_supplier_index>
+        <reference name="content">
+            <block type="hierp/adminhtml_supplier" name="supplier" />
+        </reference>
+    </hierp_adminhtml_supplier_index>
+
+    <hierp_adminhtml_supplier_edit>
+        <reference name="content">
+            <block type="hierp/adminhtml_supplier_edit" name="supplier_edit" />
+        </reference>
+    </hierp_adminhtml_supplier_edit>
+
+    <hierp_adminhtml_supplier_new>
+        <reference name="content">
+            <block type="hierp/adminhtml_supplier_edit" name="supplier_edit" />
+        </reference>
+    </hierp_adminhtml_supplier_new>
+
+    <hierp_adminhtml_contactperson_index>
+        <reference name="content">
+            <block type="hierp/adminhtml_contactPerson" name="contactPerson" />
+        </reference>
+    </hierp_adminhtml_contactperson_index>
+
+    <hierp_adminhtml_contactperson_edit>
+        <reference name="content">
+            <block type="hierp/adminhtml_contactPerson_edit" name="contactPerson_edit" />
+        </reference>
+    </hierp_adminhtml_contactperson_edit>
+
+    <hierp_adminhtml_contactperson_new>
+        <reference name="content">
+            <block type="hierp/adminhtml_contactPerson_edit" name="contactPerson_edit" />
+        </reference>
+    </hierp_adminhtml_contactperson_new>
+    
+
+
+    <hierp_adminhtml_buyorder_index>
+        <reference name="content">
+            <block type="hierp/adminhtml_buyOrder" name="buyOrder" />
+        </reference>
+    </hierp_adminhtml_buyorder_index>
+
+    <hierp_adminhtml_buyorder_edit>
+        <reference name="content">
+            <block type="hierp/adminhtml_buyOrder_edit" name="buyOrder_edit" />
+        </reference>
+    </hierp_adminhtml_buyorder_edit>
+
+    <hierp_adminhtml_buyorder_new>
+        <reference name="content">
+            <block type="hierp/adminhtml_buyOrder_edit" name="buyOrder_edit" />
+        </reference>
+    </hierp_adminhtml_buyorder_new>
+
+
+    <hierp_adminhtml_buyorderdetail_index>
+        <reference name="content">
+            <block type="hierp/adminhtml_buyOrderDetail" name="buyOrderDetail" />
+        </reference>
+    </hierp_adminhtml_buyorderdetail_index>
+
+    <hierp_adminhtml_buyorderdetail_edit>
+        <reference name="content">
+            <block type="hierp/adminhtml_buyOrderDetail_edit" name="buyOrderDetail_edit" />
+        </reference>
+    </hierp_adminhtml_buyorderdetail_edit>
+
+    <hierp_adminhtml_buyorderdetail_new>
+        <reference name="content">
+            <block type="hierp/adminhtml_buyOrderDetail_edit" name="buyOrderDetail_edit" />
+        </reference>
+    </hierp_adminhtml_buyorderdetail_new>
+
+    <hierp_adminhtml_supplier_view>
+
+        <reference name="content">
+            <block type="hierp/adminhtml_supplier_view" name="hierp_supplier_edit"></block>
+        </reference>
+		
+        <reference name="left">
+            <block type="hierp/adminhtml_supplier_view_tabs" name="supplier_view_tabs">
+                <action method="addTab">
+                    <name>supplier_info</name>
+                    <block>hierp/adminhtml_supplier_view_tab_info</block>
+                </action>
+                <action method="addTab">
+                    <name>supplier_contactperson</name>
+                    <block>hierp/adminhtml_supplier_view_tab_contactPerson</block>
+                </action>
+                <action method="addTab">
+                    <name>supplier_buyorder</name>
+                    <block>hierp/adminhtml_supplier_view_tab_buyOrder</block>
+                </action>
+
+            </block>
+        </reference>
+    </hierp_adminhtml_supplier_view>
+        
+    <hierp_adminhtml_buyorder_view>
+
+        <reference name="content">
+            <block type="hierp/adminhtml_buyOrder_view" name="hierp_buyOrder_edit"></block>
+        </reference>
+		
+        <reference name="left">
+            <block type="hierp/adminhtml_buyOrder_view_tabs" name="buyOrder_view_tabs">
+                <action method="addTab">
+                    <name>Summary</name>
+                    <block>hierp/adminhtml_buyOrder_view_tab_summary</block>
+                </action>
+                <action method="addTab">
+                    <name>Products</name>
+                    <block>hierp/adminhtml_buyOrder_view_tab_products</block>
+                </action>
+                <action method="addTab">
+                    <name>AddProducts</name>
+                    <block>hierp/adminhtml_buyOrder_view_tab_addProducts</block>
+                </action>
+
+            </block>
+        </reference>
+    </hierp_adminhtml_buyorder_view>
+    
+    <hierp_adminhtml_buyorder_productgrid>
+
+            <block type="hierp/adminhtml_buyOrder_view_tab_addProducts" name="hierp.buyorder.product.grid"  output="toHtml"/>
+
+    </hierp_adminhtml_buyorder_productgrid>
+
+
+</layout>

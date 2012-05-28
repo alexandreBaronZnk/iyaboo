@@ -1,0 +1,86 @@
+
+<div>
+<div class="entry-edit">
+<div class="entry-edit-head"   style='height:20px;'>
+
+
+
+	<h4><?php echo Mage::helper('hierp')->__('BuyOrder Summary') ?></h4>
+	<div class="tools"><?php echo $this->getBuyOrderEditLink( $this->getBuyOrder()->getId())?></div>
+	<p>
+	 </div>
+	<div class="fieldset">
+	<table cellspacing="0" class="form-list">
+	<tr>
+		<td class="label"><label><?php echo Mage::helper('hierp')->__('BuyOrder ID') ?></label></td>
+		<td class="value"><strong><?php echo $this->getBuyOrder()->getId()?></strong></td>
+	</tr>
+	<tr>
+		<td class="label"><label><?php echo Mage::helper('hierp')->__('Supplier') ?></label></td>
+		<td class="value"><strong><?php echo $this->getBuyOrder()->getSupplier()?></strong></td>
+	</tr>
+	<tr>
+		<td class="label"><label><?php echo Mage::helper('hierp')->__('Dept') ?></label></td>
+		<td class="value"><strong><?php echo $this->getBuyOrder()->getDept()?></strong></td>
+	</tr>
+	<tr>
+		<td class="label"><label><?php echo Mage::helper('hierp')->__('Employee') ?></label></td>
+		<td class="value"><strong><?php echo $this->getBuyOrder()->getOrganizer()?></strong></td>
+	</tr>
+	<tr>
+		<td class="label"><label><?php echo Mage::helper('hierp')->__('Products') ?></label></td>
+		<td class="value"><strong><?php echo $this->getBuyOrderDetail()->getProduct()?></strong></td>
+	</tr>
+<tr>
+		<td class="label"><label><?php echo Mage::helper('hierp')->__('Quantity') ?></label></td>
+		<td class="value"><strong><?php echo $this->getBuyOrderDetail()->getQuantity()?></strong></td>
+	</tr>
+<tr>
+		<td class="label"><label><?php echo Mage::helper('hierp')->__('Cost') ?></label></td>
+		<td class="value"><strong><?php echo $this->getBuyOrderDetail()->getCost()?></strong></td>
+	</tr>
+<tr>
+		<td class="label"><label><?php echo Mage::helper('hierp')->__('Comments') ?></label></td>
+		<td class="value"><strong><?php echo $this->getBuyOrderDetail()->getComments()?></strong></td>
+	</tr>
+</table></div>
+</div>
+</div>
+<div class="clear"></div>
+
+<div class="box-left">
+<div class="entry-edit">
+<div class="entry-edit-head">
+
+
+
+	<h4><?php echo Mage::helper('hierp')->__('BuyOrder Information') ?></h4>
+	<p>
+	 </div>
+	<div class="fieldset">
+	<table cellspacing="0" class="form-list">
+	<tr>
+		<td class="label"><label><?php echo Mage::helper('hierp')->__('BuyOrder ID') ?></label></td>
+		<td class="value"><strong><?php echo $this->getBuyOrder()->getId()?></strong></td>
+	</tr>
+	<tr>
+		<td class="label"><label><?php echo Mage::helper('hierp')->__('BuyOrder Name') ?></label></td>
+		<td class="value"><strong><?php echo $this->getBuyOrder()->getName()?></strong></td>
+	</tr>
+	<tr>
+		<td class="label"><label><?php echo Mage::helper('hierp')->__('Adress') ?></label></td>
+		<td class="value"><strong><?php echo $this->getBuyOrder()->getAddress()?></strong></td>
+	</tr>
+	<tr>
+		<td class="label"><label><?php echo Mage::helper('hierp')->__('Phone') ?></label></td>
+		<td class="value"><strong><?php echo $this->getBuyOrder()->getPhone()?></strong></td>
+	</tr>
+	<tr>
+		<td class="label"><label><?php echo Mage::helper('hierp')->__('Order Date') ?></label></td>
+		<td class="value"><strong><?php echo $this->getBuyOrder()->getId()?></strong></td>
+	</tr>
+</table>
+</div>
+</div>
+</div>
+

@@ -1,0 +1,4 @@
+a:5:{i:0;s:64:"Serialization of 'Mage_Core_Model_Config_Element' is not allowed";i:1;s:210:"#0 /opt/src/iyaboo/app/code/local/Mage/Core/Model/App.php(0): serialize()
+#1 /opt/src/iyaboo/app/Mage.php(627): Mage_Core_Model_App->run(Array)
+#2 /opt/src/iyaboo/index.php(82): Mage::run('', 'store')
+#3 {main}";s:3:"url";s:1:"/";s:11:"script_name";s:10:"/index.php";s:4:"skin";s:7:"default";}

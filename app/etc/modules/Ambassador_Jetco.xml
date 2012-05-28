@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ambassador_Jetco>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Ambassador_Jetco>
+    </modules>
+</config> 
